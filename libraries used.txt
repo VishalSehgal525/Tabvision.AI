@@ -1,0 +1,7 @@
+tabula-py
+opencv-python
+transformers
+timm
+vietocr
+PyMuPDF 
+Pillow

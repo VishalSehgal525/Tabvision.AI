@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabvision 👁️</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        background-color: #f4f4f4;
+      }
+
+      nav {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      nav a {
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        color: #ddd;
+        color: black;
+      }
+
+      .logo {
+        float: left;
+        padding: 15px;
+        color: white;
+        font-size: 18px;
+        user-select: none;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #333;
+        line-height: 2;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      form {
+        margin-top: 5px;
+        line-height: 3;
+      }
+
+      button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/table-qa-bot">Table QA Bot</a>
+      <a href="/logos">Logo Redaction</a>
+      <a href="/">Home</a>
+      <div class="logo">Tabvision.AI</div>
+    </nav>
+    <div class="container">
+      <h1>Table QA Bot</h1>
+      <h2>Upload PDF</h2>
+
+      <form
+        action="http://127.0.0.1:8000/chatbot"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="pdf_file">Choose a PDF file:</label>
+        <input
+          type="file"
+          id="pdf_file"
+          name="pdf_file"
+          accept=".pdf"
+          required
+        />
+        <br />
+        <button type="submit">Upload PDF</button>
+      </form>
+    </div>
+  </body>
+</html>

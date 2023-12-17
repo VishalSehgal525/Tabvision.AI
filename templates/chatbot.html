@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabvision 👁️</title>
+    <link
+      href="{{ url_for('static', path='/css/chatbot.css') }}"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      nav {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      nav a {
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        color: #ddd;
+        color: black;
+      }
+
+      .logo {
+        float: left;
+        padding: 15px;
+        color: white;
+        font-size: 18px;
+        user-select: none;
+      }
+
+      .form-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #f4f4f4; /* Background color for the form container */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container input,
+      .form-container button {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .form-container button {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      .form-container button:hover {
+        background-color: #45a049;
+      }
+
+      #chat {
+        background-color: #f4f4f4;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 70px;
+      }
+      /* style.css */
+
+      /* Add styles to the table */
+      .dataframe {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      .dataframe th,
+      .dataframe td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .dataframe th {
+        background-color: #f2f2f2;
+      }
+
+      .dataframe tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .dataframe tr:hover {
+        background-color: #e1e1e1;
+      }
+    </style>
+  </head>
+  <body onload="window.scrollTo(0,document.body.scrollHeight);">
+    <nav>
+      <a href="/table-qa-bot">Table QA Bot</a>
+      <a href="/logos">Logo Redaction</a>
+      <a href="/">Home</a>
+      <div class="logo">Tabvision.AI</div>
+    </nav>
+    <div id="chat">{{message | safe}}</div>
+    <br />
+    <div class="form-container">
+      <form method="post" action="/chatbegins" autocomplete="off">
+        <label for="query">Enter your query or 'next' for next table:</label>
+        <input type="text" id="query" name="query" autofocus required />
+        <button type="submit">Go</button>
+      </form>
+    </div>
+    <script>
+      const heading = document.getElementById("heading");
+      heading.innerHTML = "TabVision.AI";
+    </script>
+  </body>
+</html>
