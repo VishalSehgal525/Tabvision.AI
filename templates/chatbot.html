@@ -9,42 +9,45 @@
       rel="stylesheet"
     />
     <style>
-      * {
+      body,
+      h1,
+      h2,
+      p,
+      ul,
+      li {
         margin: 0;
         padding: 0;
       }
 
+      /* Set up a basic layout */
       body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        background-color: #f8f8f8;
+        color: #333;
       }
 
+      /* Navigation styles */
       nav {
-        background-color: #333;
-        overflow: hidden;
-      }
-
-      nav a {
-        float: right;
-        display: block;
+        background-color: #2c3e50;
         color: white;
+        padding: 15px; /* Increase padding for a more spacious feel */
         text-align: center;
-        padding: 14px 16px;
+      }
+      .logo {
+        text-align: left;
+      }
+      nav a {
         text-decoration: none;
+        color: white;
+        margin: 0 20px;
+        font-weight: bold;
+        float: right;
+        transition: color 0.4s ease-in-out; /* Smoother transition */
       }
 
       nav a:hover {
-        color: #ddd;
-        color: black;
-      }
-
-      .logo {
-        float: left;
-        padding: 15px;
-        color: white;
-        font-size: 18px;
-        user-select: none;
+        color: #3498db;
       }
 
       .form-container {
@@ -70,14 +73,15 @@
         font-size: 16px;
       }
 
-      .form-container button {
-        background-color: #4caf50;
+      button {
+        background-color: #2c3e50;
         color: white;
         cursor: pointer;
+        transition: background-color 0.4s ease-in-out;
       }
 
-      .form-container button:hover {
-        background-color: #45a049;
+      button:hover {
+        background-color: #3498db;
       }
 
       #chat {
@@ -123,7 +127,7 @@
       <a href="/table-qa-bot">Table QA Bot</a>
       <a href="/logos">Logo Redaction</a>
       <a href="/">Home</a>
-      <div class="logo">Tabvision.AI</div>
+      <div class="logo">TabVision.ai</div>
     </nav>
     <div id="chat">{{message | safe}}</div>
     <br />

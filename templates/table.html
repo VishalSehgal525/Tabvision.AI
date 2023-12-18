@@ -5,49 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabvision 👁️</title>
     <style>
-      * {
+      body,
+      h1,
+      h2,
+      p,
+      ul,
+      li {
         margin: 0;
         padding: 0;
       }
 
+      /* Set up a basic layout */
       body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        box-sizing: border-box;
-        box-sizing: border-box;
-        background-color: #f4f4f4;
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        background-color: #f8f8f8;
+        color: #333;
       }
 
+      /* Navigation styles */
       nav {
-        background-color: #333;
-        overflow: hidden;
-      }
-
-      nav a {
-        float: right;
-        display: block;
+        background-color: #2c3e50;
         color: white;
+        padding: 15px; /* Increase padding for a more spacious feel */
         text-align: center;
-        padding: 14px 16px;
+      }
+      .logo {
+        text-align: left;
+      }
+      nav a {
         text-decoration: none;
+        color: white;
+        margin: 0 20px;
+        font-weight: bold;
+        float: right;
+        transition: color 0.4s ease-in-out; /* Smoother transition */
       }
 
       nav a:hover {
-        color: #ddd;
-        color: black;
-      }
-
-      .logo {
-        float: left;
-        padding: 15px;
-        color: white;
-        font-size: 18px;
-        user-select: none;
+        color: #3498db;
       }
 
       .container {
-        max-width: 600px;
+        max-width: 500px;
         margin: 50px auto;
         background-color: #fff;
         padding: 20px;
@@ -55,32 +55,45 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
 
-      h1 {
-        color: #333;
-        line-height: 2;
-      }
-
+      h1,
       h2 {
-        color: #333;
+        text-align: center;
+        color: #3498db;
       }
 
       form {
-        margin-top: 5px;
-        line-height: 3;
+        margin-top: 10px;
+        line-height: 2;
+      }
+
+      .label-upload {
+        font-size: large;
+        font-weight: 700;
+        display: block;
+        text-align: center; /* Centered text */
+      }
+
+      .input-block {
+        display: block;
+        margin: 10px auto; /* Adjusted margin for better spacing */
+        text-align: center;
       }
 
       button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #333;
+        display: block;
+        padding: 12px 20px; /* Adjusted button padding for better proportions */
+        background-color: #2c3e50;
         color: #fff;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        width: 100%;
+        margin-top: 10px; /* Adjusted margin for better spacing */
+        transition: background-color 0.4s ease-in-out;
       }
 
       button:hover {
-        background-color: #555;
+        background-color: #3498db;
       }
     </style>
   </head>
@@ -89,7 +102,7 @@
       <a href="/table-qa-bot">Table QA Bot</a>
       <a href="/logos">Logo Redaction</a>
       <a href="/">Home</a>
-      <div class="logo">Tabvision.AI</div>
+      <div class="logo">TabVision.ai</div>
     </nav>
     <div class="container">
       <h1>Table QA Bot</h1>
@@ -100,15 +113,15 @@
         method="post"
         enctype="multipart/form-data"
       >
-        <label for="pdf_file">Choose a PDF file:</label>
+        <label class="label-upload" for="pdf_file">Choose a PDF file:</label>
         <input
+          class="input-block"
           type="file"
           id="pdf_file"
           name="pdf_file"
           accept=".pdf"
           required
         />
-        <br />
         <button type="submit">Upload PDF</button>
       </form>
     </div>
